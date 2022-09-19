@@ -4,7 +4,7 @@ using MindboxTest.Interfaces;
 
 namespace MindboxTest
 {
-    public class Circle : Figure, IHasArea
+    public class Circle : FigureBase
     {
         public double Radius { get; set; }
 
@@ -18,6 +18,6 @@ namespace MindboxTest
             Radius = radius;
         }
 
-        public double GetArea() => Math.PI * Math.Pow(Radius, 2);
+        public override double GetArea() => Math.PI * Math.Pow(Radius, 2);
     }
 }
