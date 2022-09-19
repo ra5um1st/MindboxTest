@@ -15,6 +15,24 @@ namespace MindboxTest.Tests
         }
 
         [Fact]
+        public void Triangle_IsRightAngled_ShouldReturnTrue()
+        {
+            var sides = new double[] { 26, 10, 24 };
+            var figure = new Triangle(sides);
+
+            Assert.True(figure.IsRightAngled());
+        }
+
+        [Fact]
+        public void Triangle_IsRightAngled_ShouldReturnFalse()
+        {
+            var sides = new double[] { 26, 10, 25 };
+            var figure = new Triangle(sides);
+
+            Assert.False(figure.IsRightAngled());
+        }
+
+        [Fact]
         public void TriangleCtor_ShouldThrowEx_PassNullArray()
         {
             Assert.Throws<ArgumentNullException>(() => new Triangle(null));
